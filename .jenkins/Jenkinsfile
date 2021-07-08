@@ -15,7 +15,6 @@ pipeline {
             stage('build') {
                 steps {
                     sh "mvn -B clean integration-test package assembly:single docker:build"
-                    sh "app_ver=$(mvn -B help:evaluate -Dexpression=project.version -q -DforceStdout); docker push docker.io/obsidiandynamics/kafdrop:$app_ver"
                     sh "docker push quay.io/corilus/kafdrop:latest"
                 }
             }
