@@ -41,7 +41,7 @@ public final class KafkaHighLevelConsumer {
       properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ByteArrayDeserializer.class);
       properties.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100);
       properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-      properties.put(ConsumerConfig.CLIENT_ID_CONFIG, "kafdrop-consumer");
+      properties.put(ConsumerConfig.CLIENT_ID_CONFIG, System.getenv("SPRING_KAFKA_CLIENT_ID"));
       properties.put(ConsumerConfig.ISOLATION_LEVEL_CONFIG, "read_committed");
       kafkaConfiguration.applyCommon(properties);
 
