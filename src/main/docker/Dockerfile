@@ -1,4 +1,4 @@
-FROM openjdk:12.0.1-jdk-oraclelinux7
+FROM eclipse-temurin:11
 
 RUN groupadd -g 1000 tomcat && \
   useradd -r -u 1000 -g tomcat tomcat
